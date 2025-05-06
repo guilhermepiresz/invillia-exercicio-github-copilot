@@ -3,6 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const activitySelect = document.getElementById("activity");
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+  // Toggle dark mode
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Update button text
+    if (document.body.classList.contains("dark-mode")) {
+      darkModeToggle.textContent = "Light Mode";
+    } else {
+      darkModeToggle.textContent = "Dark Mode";
+    }
+  });
 
   // Function to fetch activities from API
   async function fetchActivities() {
